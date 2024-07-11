@@ -1,0 +1,75 @@
+package lalab.util.data;
+
+import java.util.Collections;
+import java.util.List;
+
+/**
+ * Configuration class for the X2JConverter.
+ */
+public class X2JConverterConfig {
+
+    /**
+     * If true, XML attributes are ignored during conversion.
+     */
+    public boolean ignoreXmlAttribute = true;
+
+    /**
+     * Prefix for XML attributes when converting to JSON.
+     */
+    public String xmlAttributePrefix = "@";
+
+    /**
+     * Field name for XML values in JSON representation.
+     */
+    public String xmlValueFieldName = "_value";
+
+    /**
+     * If true, includes the root element in the JSON output.
+     */
+    public boolean includeRoot = false;
+
+    /**
+     * If true, ignores attributes with the "xsd:" prefix.
+     */
+    public boolean ignoreXsdTypeAttr = true;
+
+    /**
+     * List of XML fields that should be treated as arrays in the JSON output.
+     */
+    public List<String> xmlArrayFields = Collections.emptyList();
+
+    /**
+     * List of XML fields that should be treated as numbers in the JSON output.
+     */
+    public List<String> xmlNumberFields = Collections.emptyList();
+
+    /**
+     * List of XML fields that should be treated as booleans in the JSON output.
+     */
+    public List<String> xmlBooleanFields = Collections.emptyList();
+
+    /**
+     * If true, trims whitespace from XML values during conversion.
+     */
+    public boolean trimWhitespace = true;
+
+    /**
+     * If true, trims newline characters from XML values during conversion.
+     */
+    public boolean trimNewLine = true;
+
+    /**
+     * If true, treats null values as empty strings in the JSON output.
+     */
+    public boolean nullAsEmptyString = false;
+
+    /**
+     * If true, removes the SOAP envelope from the XML document during conversion.
+     */
+    public boolean tearSOAPEnvelope = false;
+
+    /**
+     * If true, removes namespace aliases from XML element names during conversion.
+     */
+    public boolean removeNamespaceAlias = true;
+}

@@ -166,7 +166,7 @@ public class X2JConverter {
             }
             if (value != null) {
                 String trimmed = trimStrValue(value);
-                if (!trimmed.isBlank())
+                if (!trimmed.isEmpty())
                     node.put(config.xmlValueFieldName, trimmed);
             }
             return node;

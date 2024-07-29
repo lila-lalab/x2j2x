@@ -109,7 +109,7 @@ public class X2JConverter {
     public String trimNodeName(String xmlNodeName) {
         if (config.removeNamespaceAlias) {
             String[] namespaceSplitted = xmlNodeName.split(":");
-            if (namespaceSplitted.length > 1) return xmlNodeName.substring(namespaceSplitted.length + 1);
+            if (namespaceSplitted.length > 1) return xmlNodeName.substring(namespaceSplitted[0].length() + 1);
         }
         return xmlNodeName;
     }
@@ -154,14 +154,14 @@ public class X2JConverter {
                 if (items.getValue().size() == 1) {
                     Node item = items.getValue().get(0);
                     JsonNode target = convertToJsonNode(item);
-                    node.set(item.getNodeName(), target);
+                    node.set(trimNodeName(item.getNodeName()), target);
                 } else {
                     ArrayNode array = objectMapper.createArrayNode();
                     for (Node xmlNode : items.getValue()) {
                         JsonNode target = convertToJsonNode(xmlNode);
                         array.add(target);
                     }
-                    node.set(items.getKey(), array);
+                    node.set(trimNodeName(items.getKey()), array);
                 }
             }
             if (value != null) {

@@ -34,6 +34,18 @@ class X2JConverterTest {
         assertTrue(json.has("name"));
         assertEquals("John", json.get("name").asText());
     }
+    @Test
+    void testNameSpaceTrimming() throws Exception {
+        config.removeNamespaceAlias=true;
+        X2JConverter converter = new X2JConverter(config);
+        Document doc = createDocument("<root:root><body:name>John</body:name></root:root>");
+        JsonNode json = converter.x2J(doc);
+        System.out.println(json.toString());
+
+        assertTrue(json.isObject());
+        assertTrue(json.has("name"));
+        assertEquals("John", json.get("name").asText());
+    }
 
     @Test
     void testNestedElementConversion() throws Exception {

@@ -1,4 +1,4 @@
-package lalab.util.data;
+package com.lalab.util.data;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;

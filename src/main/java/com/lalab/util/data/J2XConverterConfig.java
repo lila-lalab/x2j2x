@@ -1,4 +1,4 @@
-package lalab.util.data;
+package com.lalab.util.data;
 
 /**
  * Configuration class for J2XConverter.

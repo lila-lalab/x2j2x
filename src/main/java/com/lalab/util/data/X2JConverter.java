@@ -1,4 +1,4 @@
-package lalab.util.data;
+package com.lalab.util.data;
 
 import java.io.IOException;
 import java.io.Writer;

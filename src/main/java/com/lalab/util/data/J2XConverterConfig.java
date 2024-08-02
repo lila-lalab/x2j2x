@@ -20,7 +20,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 // SOFTWARE.
 
-package lalab.util.data;
+package com.lalab.util.data;
 
 /**
  * Configuration class for J2XConverter.
